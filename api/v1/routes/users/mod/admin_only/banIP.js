@@ -69,7 +69,7 @@ module.exports = (app, utils) => {
             {
                 name: username,
                 icon_url: String(`${utils.env.ApiURL}/api/v1/users/getpfp?username=${username}`),
-                url: String("https://penguinmod.com/profile?user=" + username)
+                url: String("https://tutelmod.com/profile?user=" + username)
             },
             toggle ? 0xc40404 : 0x45efc6
         );

@@ -4959,7 +4959,7 @@ class UserManager {
                     {
                         From: {
                             Email: "no-reply@penguinmod.com",
-                            Name: "PenguinMod",
+                            Name: "TutelMod",
                         },
                         To: [
                             {

@@ -5,7 +5,8 @@ services:
         ports:
             - ${PORT}:${PORT}
         volumes:
-            - ${DOCKER_CURRENT_DIR_LOCATION}
+            - ${DOCKER_CURRENT_DIR_LOCATION}:/app
+            - /app/node_modules
         networks:
             - sigma_network
         environment:
@@ -25,7 +26,7 @@ services:
         logging:
             driver: none
     minio:
-        image: quay.io/minio/minio
+        image: minio/minio:RELEASE.2025-04-22T22-12-26Z
         command: server /data --console-address ":9001"
         environment:
             - MINIO_ROOT_USER=${MinioClientID}
