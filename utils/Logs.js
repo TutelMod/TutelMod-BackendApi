@@ -524,7 +524,7 @@ function sendCreationLog(username, id, name, type, color = 0x25da5b) {
                 author: {
                     name: String(username).substring(0, 50),
                     icon_url: String(
-                        "https://projects.penguinmod.com/api/v1/users/getpfp?username=" +
+                        "https://projects.tutelmod.com/api/v1/users/getpfp?username=" +
                             String(username).substring(0, 50),
                     ),
                     url: String(
@@ -539,7 +539,7 @@ function sendCreationLog(username, id, name, type, color = 0x25da5b) {
     };
 
     if (type === "upload" || type === "update") {
-        const url = `https://projects.penguinmod.com/api/v1/projects/getproject?requestType=thumbnail&projectID=${id}&rnd=${Math.random()}`;
+        const url = `https://projects.tutelmod.com/api/v1/projects/getproject?requestType=thumbnail&projectID=${id}&rnd=${Math.random()}`;
         body_json.embeds[0].image = {
             url,
         };
@@ -560,7 +560,7 @@ function sendCreationLog(username, id, name, type, color = 0x25da5b) {
 
 function sendFeatureLog(id, title, creator, manual = false) {
     const projectImage = String(
-        `https://projects.penguinmod.com/api/v1/projects/getproject?requestType=thumbnail&projectID=${id}`,
+        `https://projects.tutelmod.com/api/v1/projects/getproject?requestType=thumbnail&projectID=${id}`,
     );
     const projectTitle = String(title).substring(0, 250);
     const body = JSON.stringify({
@@ -571,15 +571,15 @@ function sendFeatureLog(id, title, creator, manual = false) {
                 description: `Project ID: \`${id}\``,
                 image: { url: projectImage },
                 color: 16771677,
-                url: String("https://studio.penguinmod.com/#" + String(id)),
+                url: String("https://studio.tutelmod.com/#" + String(id)),
                 author: {
                     name: String(creator).substring(0, 50),
                     icon_url: String(
-                        "https://projects.penguinmod.com/api/v1/users/getpfp?username=" +
+                        "https://projects.tutelmod.com/api/v1/users/getpfp?username=" +
                             String(creator).substring(0, 50),
                     ),
                     url: String(
-                        "https://penguinmod.com/profile?user=" +
+                        "https://tutelmod.com/profile?user=" +
                             String(creator).substring(0, 50),
                     ),
                 },
@@ -600,7 +600,7 @@ function sendFeatureLog(id, title, creator, manual = false) {
 const watchlist = {
     sendProjectUploadLog(id, title, creator) {
         const projectImage = String(
-            `https://projects.penguinmod.com/api/v1/projects/getproject?requestType=thumbnail&projectID=${id}`,
+            `https://projects.tutelmod.com/api/v1/projects/getproject?requestType=thumbnail&projectID=${id}`,
         );
         const projectTitle = String(title).substring(0, 250);
         const body = JSON.stringify({
@@ -611,15 +611,15 @@ const watchlist = {
                     description: `Project ID: \`${id}\``,
                     image: { url: projectImage },
                     color: 0xbf8939,
-                    url: String("https://studio.penguinmod.com/#" + String(id)),
+                    url: String("https://studio.tutelmod.com/#" + String(id)),
                     author: {
                         name: String(creator).substring(0, 50),
                         icon_url: String(
-                            "https://projects.penguinmod.com/api/v1/users/getpfp?username=" +
+                            "https://projects.tutelmod.com/api/v1/users/getpfp?username=" +
                                 String(creator).substring(0, 50),
                         ),
                         url: String(
-                            "https://penguinmod.com/profile?user=" +
+                            "https://tutelmod.com/profile?user=" +
                                 String(creator).substring(0, 50),
                         ),
                     },
@@ -639,7 +639,7 @@ const watchlist = {
 
     sendProjectUpdateLog(id, title, creator) {
         const projectImage = String(
-            `https://projects.penguinmod.com/api/v1/projects/getproject?requestType=thumbnail&projectID=${id}`,
+            `https://projects.tutelmod.com/api/v1/projects/getproject?requestType=thumbnail&projectID=${id}`,
         );
         const projectTitle = String(title).substring(0, 250);
         const body = JSON.stringify({
@@ -650,15 +650,15 @@ const watchlist = {
                     description: `Project ID: \`${id}\``,
                     image: { url: projectImage },
                     color: 0xbf8939,
-                    url: String("https://studio.penguinmod.com/#" + String(id)),
+                    url: String("https://studio.tutelmod.com/#" + String(id)),
                     author: {
                         name: String(creator).substring(0, 50),
                         icon_url: String(
-                            "https://projects.penguinmod.com/api/v1/users/getpfp?username=" +
+                            "https://projects.tutelmod.com/api/v1/users/getpfp?username=" +
                                 String(creator).substring(0, 50),
                         ),
                         url: String(
-                            "https://penguinmod.com/profile?user=" +
+                            "https://tutelmod.com/profile?user=" +
                                 String(creator).substring(0, 50),
                         ),
                     },
@@ -685,16 +685,16 @@ const watchlist = {
                     description: `User ID: \`${id}\``,
                     color: 0xcecd77,
                     url: String(
-                        "https://penguinmod.com/profile?user=" + String(id),
+                        "https://tutelmod.com/profile?user=" + String(id),
                     ),
                     author: {
                         name: String(new_username),
                         icon_url: String(
-                            "https://projects.penguinmod.com/api/v1/users/getpfp?username=" +
+                            "https://projects.tutelmod.com/api/v1/users/getpfp?username=" +
                                 String(new_username),
                         ),
                         url: String(
-                            "https://penguinmod.com/profile?user=" +
+                            "https://tutelmod.com/profile?user=" +
                                 String(new_username),
                         ),
                     },
@@ -719,15 +719,15 @@ const watchlist = {
                 {
                     title: `${user} is now on the watchlist`,
                     color: 0xdba678,
-                    url: `https://penguinmod.com/profile?user=${user}`,
+                    url: `https://tutelmod.com/profile?user=${user}`,
                     author: {
                         name: String(admin).substring(0, 50),
                         icon_url: String(
-                            "https://projects.penguinmod.com/api/v1/users/getpfp?username=" +
+                            "https://projects.tutelmod.com/api/v1/users/getpfp?username=" +
                                 String(admin).substring(0, 50),
                         ),
                         url: String(
-                            "https://penguinmod.com/profile?user=" +
+                            "https://tutelmod.com/profile?user=" +
                                 String(admin).substring(0, 50),
                         ),
                     },
